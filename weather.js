@@ -8,6 +8,7 @@ let isShowingWeather = false;
 
 function searchForWeather() {
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${userInput.value.trim()}&appid=084b05b7f88e24ee3c1613de462d8d8e`;
+  // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${userInput.value.trim()}&appid=084b05b7f88e24ee3c1613de462d8d8e`;
 
   weatherInfo(apiUrl);
 
