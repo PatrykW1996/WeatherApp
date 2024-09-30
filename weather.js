@@ -14,11 +14,15 @@ function searchForWeather() {
   userInput.value = "";
 }
 searchButton.addEventListener("click", searchForWeather);
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") searchForWeather();
+});
 
 function displayAlert(message) {
   alertMessage.textContent = message;
   alertMessage.style.fontWeight = "bold";
-  setTimeout(() => (alertMessage.textContent = ""), 1500);
+  setTimeout(() => (alertMessage.textContent = ""), 1200);
+  removeWatherInfo();
 }
 
 async function weatherInfo(url) {
@@ -59,5 +63,12 @@ async function weatherInfo(url) {
     }
   } catch (err) {
     displayAlert(`Please check your spelling`);
+  }
+}
+
+function removeWatherInfo() {
+  if (isShowingWeather) {
+    weatherContainer.removeChild(document.querySelector(".weather-info"));
+    isShowingWeather = false;
   }
 }
