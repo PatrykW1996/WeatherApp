@@ -18,7 +18,7 @@ searchButton.addEventListener("click", searchForWeather);
 function displayAlert(message) {
   alertMessage.textContent = message;
   alertMessage.style.fontWeight = "bold";
-  setTimeout(() => (alertMessage.textContent = ""), 1200);
+  setTimeout(() => (alertMessage.textContent = ""), 1500);
 }
 
 async function weatherInfo(url) {
